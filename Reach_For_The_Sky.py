@@ -24,23 +24,27 @@ for a in np.arange(-50, 50, 0.01):
         a = round(a,2)
         b = round(b,2)
         # domain & range maker
-        for x in range(-100,100):
+        for x in np.arange(-100, 100, 0.01):
             y = (-5*x**2)+(a*x)+b
+            x = round(x,2)
+            y = round(y,2)
             xyDict[x] = x,y
         #print(xyDict)
         # ab ba maker
         ab = str(a),str(b)
         ba = str(b),str(a)
         # checker
-        for check_times in range(-100,100):
-            xy = xy_get(xyDict[check_times])
+        for x in np.arange(-100, 100, 0.01):
+            x = round(x,2)
+            xy = xy_get(xyDict[x])
             if ab == xy:
                 first_check = True
                 print("first check True: ",xy,'==',ab)
             #else:
                 #print(ab,'!=', xy)
-        for check_times in range(-100,100):
-            xy = xy_get(xyDict[check_times])
+        for x in np.arange(-100, 100, 0.01):
+            x = round(x, 2)
+            xy = xy_get(xyDict[x])
             if ba == xy:
                 second_check = True
                 print("Second check True: ",xy,'==',ab)
@@ -56,4 +60,5 @@ for a in np.arange(-50, 50, 0.01):
         first_check = False
         second_check = False
         final_check = False
-print(TrueDict)
+
+print("answer list: ", TrueDict)
